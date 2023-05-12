@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <title>Time Conversion</title>
+</head>
+<body>
+    <div class="container bg-light rounded"><br>
+        <h1 class="text-dark">Time Converter: Seconds, Minutes, Hours, and Days</h1><br>
+        
+        <label class="text-dark"><b>Type Desired Value :</b></label>
+        <input type="number" name="seconds" class="form-control" placeholder="Seconds Value"><br>
+        
+        <div class="row">
+            <div class="col-md-3">
+                <button class="btn btn-light" onclick="minutes()">Convert to Minutes</button>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-light" onclick="hours()">Convert to Hours</button>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-light" onclick="days()">Convert to Days</button>
+            </div>
+        </div><br>
+
+        <label class="text-dark"><b>Your Converted Value :<b></label>
+        <input type="text" name="result" class="form-control" placeholder="Converted Value" disabled><br>
+
+    </div>
+
+<script>
+function minutes() {    
+    var base = document.getElementsByName('seconds')[0].value;
+    var result = base * 0.01666667 ;    
+    document.getElementsByName('result')[0].value= result + " min/s";
+}
+function hours() {    
+    var base = document.getElementsByName('seconds')[0].value;
+    var result = base * 0.0002777778 ;    
+    document.getElementsByName('result')[0].value= result + " hr/s";
+}
+function days() {    
+    var base = document.getElementsByName('seconds')[0].value;
+    var result = base * 0.00001157407 ;    
+    document.getElementsByName('result')[0].value= result + " day/s";
+}
+</script>
+
+</body>
+</html>
